@@ -52,6 +52,14 @@
     return client;
 }
 
+- (instancetype)initWithBaseURL:(NSURL *)url errorResultClass:(Class)errorResultClass {
+	if (self = [super initWithBaseURL:url]) {
+		self.errorResultClass = errorResultClass;
+	}
+	
+	return self;
+}
+
 - (void)cancelAllOperations {
     [self.operationQueue cancelAllOperations];
 }

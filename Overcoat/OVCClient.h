@@ -64,6 +64,15 @@
 + (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account errorResultClass:(Class)errorResultClass;
 
 /**
+ Ininializes an `OVCClient` object with the specified base URL and ErrorClass
+ 
+ @param url The base URL for the client. Can be nil.
+ @param errorResultClass An MTLModel subclass used for failing requests.
+ 
+ */
+- (instancetype)initWithBaseURL:(NSURL *)url errorResultClass:(Class)errorResultClass;
+
+/**
  Cancels all queued and running `AFHTTPRequestOperation` objects.
  */
 - (void)cancelAllOperations;
